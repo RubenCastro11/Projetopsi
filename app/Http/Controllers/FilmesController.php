@@ -16,7 +16,7 @@ class FilmesController extends Controller
     }
     public function show(Request $request){
         $idfilmes = $request->id;
-        $filmes=Filmes::where('id_filme',$idfilmes)->first();
+        $filmes=Filmes::where('id_filme',$idfilmes)->with(['ator','genero'])->first();
         return view('filmes.show',[
             'filmes'=>$filmes
         ]);

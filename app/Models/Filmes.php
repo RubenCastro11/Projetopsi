@@ -10,4 +10,12 @@ class Filmes extends Model
     use HasFactory;
     protected $primaryKey='id_filme';
     protected $table='filmes';
+    
+    public function ator(){
+        return $this-> belongsTo ('App\Models\Atores','id_ator');
+        
+    }
+    public function genero(){
+        return $this-> belongsTo ('App\Models\Generos','id_genero');
+    }
 }

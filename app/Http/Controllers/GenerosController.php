@@ -16,7 +16,7 @@ class GenerosController extends Controller
     }
     public function show(Request $request){
         $idgeneros = $request->id;
-        $generos=Generos::where('id_genero',$idgeneros)->first();
+        $generos=Generos::where('id_genero',$idgeneros)->with('filmes')->first();
         return view('generos.show',[
             'genero'=>$generos
         ]);

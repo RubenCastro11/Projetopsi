@@ -10,4 +10,9 @@ class Atores extends Model
     use HasFactory;
     protected $primaryKey='id_ator';
     protected $table='atores';
+    
+    public function filmes(){
+        return $this-> hasMany('App\Models\Filmes','id_ator');
+    }
+    
 }
