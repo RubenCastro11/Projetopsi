@@ -21,4 +21,25 @@ class FilmesController extends Controller
             'filmes'=>$filmes
         ]);
     }
+    public function create(){
+        return view('filmes.create');
+    }
+    public function store(Request $req){
+
+        $novoFilme =$req->validate([
+            'titulo'=>['required','min:3','max:100'],
+            'id_genero'=>['nullable','min:1','max:11'], 
+            'sinopse'=>['nullable', 'min:3','max:11'], 
+            'quantidade'=>['required', 'min:3','max:600'], 
+            'idioma'=>['nullable', 'min:3','max:11'], 
+            'id_ator'=>['nullable','min:1','max:11'], 
+
+        ]);
+
+        $filme = Filmes::create($novoFilme);
+
+        return redirect()->route('filmes.show',[
+            'id'=>$filme->id_filme
+        ]);
+    }
 }

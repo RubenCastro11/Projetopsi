@@ -8,5 +8,4 @@ Datanasc: {{$atores->data_nascimento}}<br>
 {{$filme->titulo}}
 @endforeach
 @else
-erro
 @endif

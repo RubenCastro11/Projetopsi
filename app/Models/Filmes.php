@@ -10,6 +10,16 @@ class Filmes extends Model
     use HasFactory;
     protected $primaryKey='id_filme';
     protected $table='filmes';
+
+    protected $fillable=[
+    	'titulo',
+    	'id_genero',
+    	'sinopse',
+    	'quantidade',
+    	'idioma',
+    	'id_autor'
+
+    ];
     
     public function ator(){
         return $this-> belongsTo ('App\Models\Atores','id_ator');

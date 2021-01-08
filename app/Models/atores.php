@@ -10,7 +10,15 @@ class Atores extends Model
     use HasFactory;
     protected $primaryKey='id_ator';
     protected $table='atores';
-    
+
+    protected $fillable=[
+    	'nome',
+    	'nacionalidade',
+    	'data_nascimento',
+    	'fotografia'
+
+    ];
+
     public function filmes(){
         return $this-> hasMany('App\Models\Filmes','id_ator');
     }

@@ -6,3 +6,8 @@
 </a>
 </li>
 @endforeach   
+
+<button>
+<a href="{{route('filmes.create')}}" class="btn btn-primary">Adicionar filmes
+    
+</a>  

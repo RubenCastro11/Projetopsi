@@ -6,3 +6,8 @@
 </a>
 </li>
 @endforeach   
+
+<button>
+<a href="{{route('atores.create')}}" class="btn btn-primary">Adicionar ator
+    
+</a>

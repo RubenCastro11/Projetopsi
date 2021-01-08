@@ -5,4 +5,9 @@
     {{$genero->designacao}}
 </a>
 </li>
-@endforeach   
+@endforeach 
+
+<button>
+<a href="{{route('generos.create')}}" class="btn btn-primary">Adicionar género
+    
+</a>  
