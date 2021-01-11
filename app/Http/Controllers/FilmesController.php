@@ -30,7 +30,7 @@ class FilmesController extends Controller
             'titulo'=>['required','min:3','max:100'],
             'id_genero'=>['nullable','min:1','max:11'], 
             'sinopse'=>['nullable', 'min:3','max:11'], 
-            'quantidade'=>['required', 'min:3','max:600'], 
+            'quantidade'=>['nullable', 'min:1','max:600'], 
             'idioma'=>['nullable', 'min:3','max:11'], 
             'id_ator'=>['nullable','min:1','max:11'], 
 
@@ -42,4 +42,35 @@ class FilmesController extends Controller
             'id'=>$filme->id_filme
         ]);
     }
+    public function edit(Request $request){
+
+        $idFilme=$request->id;
+
+        $filme = Filmes::where('id_filme', $idFilme)->first();
+
+        return view('filmes.edit',[
+            'filme'=>$filme
+        ]);
+    }
+    public function update (Request $request ){
+
+        $idFilme=$request->id;
+
+        $filme = Filmes::where('id_filme', $idFilme)->first();
+
+        $atualizarFilme = $request->vallidate([
+            'titulo'=>['required','min:3','max:100'],
+            'id_genero'=>['nullable','min:1','max:11'], 
+            'sinopse'=>['nullable', 'min:3','max:11'], 
+            'quantidade'=>['nullable', 'min:1','max:600'], 
+            'idioma'=>['nullable', 'min:3','max:11'], 
+            'id_ator'=>['nullable','min:1','max:11'], 
+        ]);
+        $ator->update($atualizarAtor);
+
+        return redirect()->route('filmes.show',[
+            'id'=>$filme->id_filme
+        ]);
+    }
+
 }

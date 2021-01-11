@@ -1,5 +1,6 @@
-<form action="{{route('filmes.store')}}" enctype="multipart/form-data" method="post">
+<form action="{{route('filmes.update',['id'=>filmes->id_filme])}}" method="post">
 @csrf
+@method('patch')
 
 Título: <input type="text" name="titulo" value="{{old('titulo')}}"><br><br>
 @if($errors->has('titulo'))

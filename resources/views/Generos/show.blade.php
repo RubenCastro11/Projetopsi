@@ -8,6 +8,6 @@ Filmes:<br>
     <li>
         {{$filme->titulo}}
     </li>
-
+    
 @endforeach
 </ul>

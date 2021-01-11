@@ -17,7 +17,7 @@ class Filmes extends Model
     	'sinopse',
     	'quantidade',
     	'idioma',
-    	'id_autor'
+    	'id_ator'
 
     ];
     
