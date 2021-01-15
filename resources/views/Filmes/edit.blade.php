@@ -1,4 +1,4 @@
-<form action="{{route('filmes.update',['id'=>filmes->id_filme])}}" method="post">
+<form action="{{route('filmes.update',['id'=>$filme->id_filme])}}" method="post">
 @csrf
 @method('patch')
 

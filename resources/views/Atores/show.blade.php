@@ -9,3 +9,8 @@ Datanasc: {{$atores->data_nascimento}}<br>
 @endforeach
 @else
 @endif
+
+<button>
+<a href="{{route('atores.edit', ['id'=>$atores->id_ator])}}" class="btn btn-primary"> Editar 
+
+</a>

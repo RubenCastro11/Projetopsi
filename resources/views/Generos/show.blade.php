@@ -3,11 +3,16 @@ Id: {{$genero->id_genero}}<br>
 Designação: {{$genero->designacao}}<br>
 Observações: {{$genero->observacoes}}<br>
 Filmes:<br>
-<ul>
+
 @foreach ($genero->filmes as $filme)
-    <li>
-        {{$filme->titulo}}
-    </li>
+    
+        {{$filme->titulo}}<br>
+    
     
 @endforeach
-</ul>
+
+<button>
+<a href="{{route('generos.edit', ['id'=>$genero->id_genero])}}" class="btn btn-primary"> Editar 
+
+</a>
+

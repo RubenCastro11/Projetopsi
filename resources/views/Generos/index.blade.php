@@ -8,6 +8,6 @@
 @endforeach 
 
 <button>
-<a href="{{route('generos.create')}}" class="btn btn-primary">Adicionar género
+<a href="{{route('generos.create')}}" class="btn btn-primary">Adicionar
     
 </a>  

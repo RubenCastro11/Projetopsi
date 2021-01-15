@@ -43,6 +43,35 @@ class AtoresController extends Controller
 
 
     }
+    public function edit(Request $request){
+
+        $idAtor=$request->id;
+
+        $ator = Atores::where('id_ator', $idAtor)->first();
+
+        return view('atores.edit',[
+            'ator'=>$ator
+        ]);
+    }
+    public function update (Request $request ){
+
+        $idAtor=$request->id;
+
+        $ator = Atores::where('id_ator', $idAtor)->first();
+
+        $atualizarAtor = $request->validate([
+            'nome'=>['required','min:3','max:50'],
+            'nacionalidade'=>['nullable', 'min:3','max:20'],
+            'data_nascimento'=>['nullable','date'],
+            'fotografia'=>['image','nullable','max:255']    
+
+        ]);
+        $ator->update($atualizarAtor);
+
+        return redirect()->route('atores.show',[
+            'id'=>$ator->id_ator
+        ]);
+    }
 
    
 }

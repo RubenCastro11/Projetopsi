@@ -58,7 +58,8 @@ class FilmesController extends Controller
 
         $filme = Filmes::where('id_filme', $idFilme)->first();
 
-        $atualizarFilme = $request->vallidate([
+        $atualizarFilme = $request->validate([
+        
             'titulo'=>['required','min:3','max:100'],
             'id_genero'=>['nullable','min:1','max:11'], 
             'sinopse'=>['nullable', 'min:3','max:11'], 
@@ -66,11 +67,12 @@ class FilmesController extends Controller
             'idioma'=>['nullable', 'min:3','max:11'], 
             'id_ator'=>['nullable','min:1','max:11'], 
         ]);
-        $ator->update($atualizarAtor);
+        $filme->update($atualizarFilme);
 
         return redirect()->route('filmes.show',[
             'id'=>$filme->id_filme
         ]);
     }
+    
 
 }
